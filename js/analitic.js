@@ -3,7 +3,7 @@ angular.module('analitic',['firebase','ngRoute'])
     .config(function($routeProvider) {
         $routeProvider
         .when("/", {
-            templateUrl : "main.htm"
+            templateUrl : "view/main.html"
         })
         .when("/red", {
             templateUrl : "red.htm"
