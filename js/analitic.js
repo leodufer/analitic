@@ -1,4 +1,21 @@
-angular.module('analitic',['firebase'])
+angular.module('analitic',['firebase','ngRoute'])
+    
+    .config(function($routeProvider) {
+        $routeProvider
+        .when("/", {
+            templateUrl : "main.htm"
+        })
+        .when("/red", {
+            templateUrl : "red.htm"
+        })
+        .when("/green", {
+            templateUrl : "green.htm"
+        })
+        .when("/blue", {
+            templateUrl : "blue.htm"
+        });
+    })
+    
     .controller('MainCtrl', MainCtrl);
 
     function MainCtrl($firebaseArray, $scope){
