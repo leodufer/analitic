@@ -1,0 +1,37 @@
+<html lang="es">
+    <head>
+        <title>Analitic</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <div ng-app="analitic">
+            <di ng-controller="MainCtrl">
+                <p>Latitude: {{geolocation.coords.latitude}}</p>
+                <p>Longitude: {{geolocation.coords.latitude}}</p>
+                <ul>
+                    <li ng-repeat="operador in operadores">{{operador.name}}</li>
+                </ul>
+            </di>
+        </div>
+    
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
+    <!--script src="https://code.angularjs.org/1.6.4/angular-route.js"></script-->
+    <script src="https://www.gstatic.com/firebasejs/3.8.0/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+    
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyDHkFBa5It2XzRtKz-WwVjghsEJw27RSe4",
+        authDomain: "mapsanalitic.firebaseapp.com",
+        databaseURL: "https://mapsanalitic.firebaseio.com",
+        projectId: "mapsanalitic",
+        storageBucket: "mapsanalitic.appspot.com",
+        messagingSenderId: "421990572155"
+    };
+    firebase.initializeApp(config);
+    </script>
+     <script src="js/analitic.js"></script>
+    </body>
+</html>
