@@ -1,34 +1,24 @@
-angular.module('analitic',['firebase','ngRoute'])
+angular.module('analitic',['Main','Nav','Register','ngRoute'])
     
     .config(function($routeProvider) {
         $routeProvider
         .when("/", {
-            templateUrl : "view/main.html"
+            templateUrl : 'js/components/main/main.html',
+            controller:'MainCtrl'
         })
-        .when("/red", {
-            templateUrl : "red.htm"
+        .when("/users", {
+            templateUrl : "js/components/users/users.html",
+            controller:'UsersCtrl'
         })
-        .when("/green", {
-            templateUrl : "green.htm"
+        .when("/register", {
+            templateUrl : "js/components/register/register.html",
+            controller:'RegisterCtrl'
         })
-        .when("/blue", {
-            templateUrl : "blue.htm"
+        .when("/location", {
+            templateUrl : "js/components/location/location.html",
+            controller:'LocationCtrl'
+        })
+        .otherwise({
+            redirectTo: "/"
         });
-    })
-    
-    .controller('MainCtrl', MainCtrl);
-
-    function MainCtrl($firebaseArray, $scope){
-        
-        navigator.geolocation.getCurrentPosition(function(location){
-            $scope.geolocation = location;
-            console.log($scope.geolocation);
-            $scope.$digest();
-         })
-        var ref = firebase.database().ref().child("encuestados");
-        $scope.operadores = $firebaseArray(ref);
-        $scope.operadores.$add({name:'German'});
-        $scope.operadores.$add({name:'Pedro'});
-
-
-    };
+    });
