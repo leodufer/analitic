@@ -14,6 +14,10 @@ angular.module('analitic',['Main','Nav','Register','ngRoute'])
             templateUrl : "js/components/register/register.html",
             controller:'RegisterCtrl'
         })
+        .when("/register/new", {
+            templateUrl : "js/components/register/new.html",
+            controller:'NewRegisterCtrl'
+        })
         .when("/location", {
             templateUrl : "js/components/location/location.html",
             controller:'LocationCtrl'
