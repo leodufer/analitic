@@ -1,4 +1,4 @@
-angular.module('analitic',['Main','Nav','Register','ngRoute'])
+angular.module('analitic',['Main','Nav','Register','Location','ngRoute'])
     
     .config(function($routeProvider) {
         $routeProvider
